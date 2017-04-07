@@ -2,18 +2,15 @@
 
 ## Projects
 
+   * [DAB Templates](https://github.com/ngardiner/dab_templates) for simple, customized deployment of Linux Container Templates (LXC) on Proxmox VE.
    * [OpenWRT Configuration System](https://github.com/ngardiner/openwrt_config) for configuring large deployments of OpenWRT systems - [read more](openwrt_deployments) on how and why such a large deployment is required. (_Note: very alpha codebase_)
-
-You can use the [editor on GitHub](https://github.com/ngardiner/ngardiner.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ## Social Media
 
-   * [My Facebook Page](https://www.facebook.com/ngardiner)
+   * [My Facebook Page](https://www.facebook.com/ngardiner.au)
    * [My YouTube Channel](https://www.youtube.com)
 
-**Bold** and `Code` text
+`Code` text
 
 [Link](url) and ![Image](src)
 ```
