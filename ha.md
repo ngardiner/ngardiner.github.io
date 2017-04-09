@@ -54,4 +54,15 @@ The remaining two Temperature and Humidity sensors are wall-mounted indoors, at 
 
 In order to provide whole-house audio, I picked up 6 NEXX WT3050 devices which provide 2 x 100Mbps ethernet ports, 1 USB port and 54Mbps WiFi. The NEXX devices are able to run OpenWRT, which provides great flexibility in configuring 
 
-For $29.75, I picked up 6 sets of USB A to DC jack connectors, as well as 6 sets of DC jack to USB micro connecots, and 6 USB audio sound card devices.
+<center>
+  <img src="images/IMG_20170409_175646.jpg" />
+  <br /><i>The 6 NEXX WT3050 devices used to provide whole-house audio</i>
+</center>
+
+For $29.75, I picked up 6 sets of USB A to DC jack connectors, as well as 6 sets of DC jack to USB micro connectors, and 6 USB audio sound card devices. These are coupled with 6 passive PoE injectors (for $20.80), to allow the NEXX devices to be powered via Ethernet cables.
+
+To connect the USB audio devices to the NEXX devices, I purchased 6 rotatable 3-port USB hubs, at a cost of $23.67. These USB hubs allow multiple devices to be connected to each of the NEXX devices, in a small form factor, providing 
+
+<center>
+  <img src="images/IMG_20170409_163837.jpg" />
+</center>
