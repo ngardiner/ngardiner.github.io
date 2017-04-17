@@ -17,7 +17,7 @@ Within the house, there are 3 locations where the equipment used to support the 
 In each location, there are 3 components. The first is one or more switches, connected to each of the other zones by LACP bundled ethernet interfaces. The second is a small server such as an Intel NUC i5 for Proxmox. The third is a set of disks connected to the server which are used for Ceph storage.
 
 The following image shows the South zone cabinet both closed and with the contents of the cabinet. 
-<img src="images/IMG_20170417_122401.jpg" /> <img src="images/IMG_20170417_122622.jpg" />
+<img src="images/IMG_20170417_122401_s.jpg" /> <img src="images/IMG_20170417_122622_s.jpg" />
 
 Here, you can see the North zone cabinet under construction
 
@@ -25,9 +25,11 @@ Here, you can see the North zone cabinet under construction
 
 ### Network Switching and Routing
 
-Our Home Automation switching and routing platform provides a network backbone of up to 4Gbps, though the use of Link Aggregation on TP-Link gigabit POE switches. These form the core distribution network throughout the house, with 2 ports aggregated together in each direction, carrying all of the VLANs throughout the house.
+Our Home Automation switching and routing platform provides a network backbone of up to 4Gbps, though the use of Link Aggregation on TP-Link Gigabit POE switches. These form the core distribution network throughout the house, with 2 ports aggregated together in each direction, carrying all of the VLANs throughout the house.
 
+Each of the backbone switches are connected to one TP-Link Archer C7 Gigabit Wifi router. These routers offer an additional 4 ports, 1 of which is reserved for WAN connectivity, and another reserved to connect to a TP-Link TL-MR3020 or TL- which were previously used as Wifi routers, but have been converted into "smart switches" capable of offloading some of the network services
 
+All of the switches + routers outside of the backbone POE routers are running OpenWRT 
 
 ### Virtualization Platform
 
@@ -54,6 +56,11 @@ For indoor LED lighting, I am using Xiaomi Yeelight RGB bulbs. Yeelights use WiF
 #### Temperature and Humidity Sensors
 
 For measuring Temperature and Humidity, I have 5 Xiaomi sensors (AU$75) which provide real-time feedback through the Xiaomi Home Hub over the Zigbee wireless protocol. 3 of those sensors are located within the 3 network equipment locations in the house (North, Central, South) and assist in monitoring the equipment to ensure it is not overheating.
+
+<center>
+  <img src="images/IMG_20170417_122142_c.jpg" />
+  <br /><i>The Xiaomi Temperature and Humidity Sensor</i>
+</center>
 
 The remaining two Temperature and Humidity sensors are wall-mounted indoors, at either side of the house. These are used to monitor the indoor temperature to determine when 
 
