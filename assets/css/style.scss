@@ -2,4 +2,6 @@
 ---
 
 @import "{{ site.theme }}";
-body {margin:0;padding:0}
+.inner {
+    width: 920px;
+}
