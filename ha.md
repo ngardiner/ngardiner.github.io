@@ -2,9 +2,11 @@
 
 ## Introduction
 
-Home Automation is an exciting new area of technology for anyone with an interest in integrating modern technology and scripting into our daily life.
+Home Automation is an exciting new area of technology for anyone with an interest in integrating modern technology and scripting into our daily life. It allows interconnectivity between our audio, video, lighting, sensors, heating, cooling and security systems, working on an event and rule based system that allows us to customize very specific rules for our environment.
 
-For anyone with scripting and automation background, it provides a way to outsource things we would typically manage manually to smart processes which are able to read and react to many dynamic values from dynamic sensors around our home.
+For anyone with scripting and automation background, Home Automation provides a way to outsource things we would typically manage manually to smart processes which are able to read and react to many dynamic values from dynamic sensors around our home.
+
+For around $x, we have managed to turn our house into a Smart House, 
 
 ## System Architecture
 
@@ -12,18 +14,22 @@ The System Architecture for my Home Automation system comes down to a mix of net
 
 ### Structure
 
-Within the house, there are 3 locations where the equipment used to support the HA environment are hosted. These are in hidden/out of sight locations in 3 areas of the house known as the North, Central and South zones. It is important to distribute the equipment into these different zones as much of the solution relies on wireless technologies including WiFi and Zigbee
+Within the house, there are 3 locations where the equipment used to support the HA environment are hosted. These are in hidden/out of sight locations in 3 areas of the house known as the North, Central and South zones. It is important to distribute the equipment into these different zones as much of the solution relies on wireless technologies including WiFi and Zigbee. Each of the individual zones will provide POE, Wifi with a uniform set of SSIDs across the house and Zigbee.
 
 In each location, there are 3 components. The first is one or more switches, connected to each of the other zones by LACP bundled ethernet interfaces. The second is a small server such as an Intel NUC i5 for Proxmox. The third is a set of disks connected to the server which are used for Ceph storage.
 
-The following image shows the South zone cabinet both closed and with the contents of the cabinet. Inside, you will see a number of switches, an Intel NUC (for Proxmox), a Disk Cabinet with a pair of hard disks, a Raspberry Pi and all of the cabling required to connect and power the devices.
+The following image shows the South zone cabinet both closed and open, with the contents of the cabinet. Inside, you will see a number of switches, an Intel NUC (for Proxmox), a Disk Cabinet with a pair of hard disks, a Raspberry Pi and all of the cabling required to connect and power the devices.
 
 <center>
-  <br />
   <img src="images/IMG_20170417_122401_s.jpg" /> <img src="images/IMG_20170417_122622_s.jpg" />
+  <br /><i>The South Cabinet</i>
 </center>
 
-Here, you can see the North zone cabinet under construction
+Here, you can see the North zone cabinet under construction. Power Strips have been locked in to place using epoxy resin, 
+
+### Security
+
+Security is an important subject when considering Home Automation. Many of our Home Automation components (including Yeelight, Xiaomi Gateway) by default connect to the Internet to 
 
 ## Components
 
@@ -49,7 +55,7 @@ Distributed Storage is provided through Ceph
 
 #### Cameras
 
-Cameras are
+Cameras are important for surveillance and motion detection. Using indoor and outdoor cameras managed by Zoneminder, we are able to monitor the property remotely and detect motion events. In the event of an attempted break-in, our door and window sensors will detect the attempted 
 
 6 outdoor cameras ($313) and 4 indoor cameras ($185) 
 
@@ -66,7 +72,7 @@ For measuring Temperature and Humidity, I have 5 Xiaomi sensors (AU$75) which pr
   <br /><i>The Xiaomi Temperature and Humidity Sensor</i>
 </center>
 
-The remaining two Temperature and Humidity sensors are wall-mounted indoors, at either side of the house. These are used to monitor the indoor temperature to determine when 
+<p>The remaining two Temperature and Humidity sensors are wall-mounted indoors, at either side of the house. These are used to monitor the indoor temperature to determine when to activate Air Conditioning or Heating, and can also aid in understanding whether to activate lights or to sound warnings.
 
 #### Whole-house Audio
 
@@ -75,7 +81,7 @@ In order to provide whole-house audio, I picked up 6 NEXX WT3050 devices which p
 The OpenWrt distribution used is an unmodified OpenWrt Chaos Calmer installation, with x packages installed.
 
 <center>
-  <img src="images/IMG_20170409_175646.jpg" width=300 />
+  <img src="images/IMG_20170409_175646.jpg" />
   <br /><i>The 6 NEXX WT3050 devices used to provide whole-house audio</i>
 </center>
 
