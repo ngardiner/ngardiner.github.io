@@ -16,11 +16,18 @@ Within the house, there are 3 locations where the equipment used to support the 
 
 In each location, there are 3 components. The first is one or more switches, connected to each of the other zones by LACP bundled ethernet interfaces. The second is a small server such as an Intel NUC i5 for Proxmox. The third is a set of disks connected to the server which are used for Ceph storage.
 
+The following image shows the South zone cabinet both closed and with the contents of the cabinet. 
+<img src="images/IMG_20170417_122401.jpg" /> <img src="images/IMG_20170417_122622.jpg" />
+
+Here, you can see the North zone cabinet under construction
+
 ## Components
 
 ### Network Switching and Routing
 
-Our Home Automation switching and routing platform provides a network backbone of up to 6Gbps, 
+Our Home Automation switching and routing platform provides a network backbone of up to 4Gbps, though the use of Link Aggregation on TP-Link gigabit POE switches. These form the core distribution network throughout the house, with 2 ports aggregated together in each direction, carrying all of the VLANs throughout the house.
+
+
 
 ### Virtualization Platform
 
@@ -57,7 +64,7 @@ In order to provide whole-house audio, I picked up 6 NEXX WT3050 devices which p
 The OpenWrt distribution used is an unmodified OpenWrt Chaos Calmer installation, with x packages installed.
 
 <center>
-  <img src="images/IMG_20170409_175646.jpg" />
+  <img src="images/IMG_20170409_175646.jpg" width=300 />
   <br /><i>The 6 NEXX WT3050 devices used to provide whole-house audio</i>
 </center>
 
@@ -68,6 +75,6 @@ To connect the USB audio devices to the NEXX devices, I purchased 6 rotatable 3-
 Sometimes, fixed whole-house audio doesn't quite meet the requirement, and for this I purchased 3 IdeaUSA W205 portable WiFi speakers, which cost $230 in total. The speakers connect via WiFi to our wireless network, and are able to stream audio on multiple protocols including Airplay.
 
 <center>
-  <img src="images/IMG_20170409_163837.jpg" />
+  <img src="images/IMG_20170409_163837.jpg" width=300 />
   <br /><i>The portable ideaUSA W205 WiFi speakers, providing WiFi, Bluetooth and AUX Audio</i>
 </center>
