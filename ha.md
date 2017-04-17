@@ -17,7 +17,11 @@ Within the house, there are 3 locations where the equipment used to support the 
 In each location, there are 3 components. The first is one or more switches, connected to each of the other zones by LACP bundled ethernet interfaces. The second is a small server such as an Intel NUC i5 for Proxmox. The third is a set of disks connected to the server which are used for Ceph storage.
 
 The following image shows the South zone cabinet both closed and with the contents of the cabinet. Inside, you will see a number of switches, an Intel NUC (for Proxmox), a Disk Cabinet with a pair of hard disks, a Raspberry Pi and all of the cabling required to connect and power the devices.
-<img src="images/IMG_20170417_122401_s.jpg" /> <img src="images/IMG_20170417_122622_s.jpg" />
+
+<center>
+  <br />
+  <img src="images/IMG_20170417_122401_s.jpg" /> <img src="images/IMG_20170417_122622_s.jpg" />
+</center>
 
 Here, you can see the North zone cabinet under construction
 
