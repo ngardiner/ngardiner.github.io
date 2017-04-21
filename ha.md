@@ -74,11 +74,11 @@ For measuring Temperature and Humidity, I have 5 Xiaomi sensors (AU$75) which pr
 
 <p>The remaining two Temperature and Humidity sensors are wall-mounted indoors, at either side of the house. These are used to monitor the indoor temperature to determine when to activate Air Conditioning or Heating, and can also aid in understanding whether to activate lights or to sound warnings.
 
-#### Whole-house Audio
+### Whole-house Audio
 
-In order to provide whole-house audio, I picked up 6 NEXX WT3050 devices which provide 2 x 100Mbps ethernet ports, 1 USB port and 54Mbps WiFi. The NEXX devices are able to run OpenWRT, which provides great flexibility in configuring audio platforms.
+In order to provide whole-house audio, I picked up 6 NEXX WT3050 devices (for $173) which provide 2 x 100Mbps ethernet ports, 1 USB port and 54Mbps WiFi. The NEXX devices are able to run OpenWRT, which provides great flexibility in configuring audio platforms.
 
-The OpenWrt distribution used is an unmodified OpenWrt Chaos Calmer installation, with x packages installed.
+The OpenWrt distribution used is an unmodified OpenWrt Chaos Calmer installation, with x packages installed. The NEXX is a MediaTek-based SOC, 8MB of Flash and 64MB of RAM.
 
 <center>
   <img src="images/IMG_20170409_175646.jpg" />
@@ -87,7 +87,15 @@ The OpenWrt distribution used is an unmodified OpenWrt Chaos Calmer installation
 
 <br />For $29.75, I picked up 6 sets of USB A to DC jack connectors, as well as 6 sets of DC jack to USB micro connectors, and 6 USB audio sound card devices. These are coupled with 6 passive PoE injectors (for $20.80), to allow the NEXX devices to be powered via Ethernet cables.
 
-To connect the USB audio devices to the NEXX devices, I purchased 6 rotatable 3-port USB hubs, at a cost of $23.67. These USB hubs allow multiple devices to be connected to each of the NEXX devices, in a small form factor, providing 
+To connect the USB audio devices to the NEXX devices, I purchased 6 rotatable 3-port USB hubs, at a cost of $23.67. These USB hubs allow multiple devices to be connected to each of the NEXX devices, in a small form factor, providing connectivity for multiple USB sound cards, as well as the ability to chain multiple NEXX devices together to save on switch ports.
+
+#### Daisy Chaining
+
+The NEXX WT3050 devices have a USB port and two ethernet ports. This in effect allows daisy-chaining the NEXX devices through the house for whole-house audio, but with some limitations. The NEXX can support up to 1.2a at 5V (in fact, this is closer to 1.7a in practice) and consumes between 180mA during boot, to 130mA during standard operation.
+
+We use two separate strings of 3 NEXX devices in series to provide the 6 zones of whole-house audio. 
+
+#### Portable Speakers
 
 Sometimes, fixed whole-house audio doesn't quite meet the requirement, and for this I purchased 3 IdeaUSA W205 portable WiFi speakers, which cost $230 in total. The speakers connect via WiFi to our wireless network, and are able to stream audio on multiple protocols including Airplay.
 
@@ -95,3 +103,4 @@ Sometimes, fixed whole-house audio doesn't quite meet the requirement, and for t
   <img src="images/IMG_20170409_163837.jpg" width=300 />
   <br /><i>The portable ideaUSA W205 WiFi speakers, providing WiFi, Bluetooth and AUX Audio</i>
 </center>
+
