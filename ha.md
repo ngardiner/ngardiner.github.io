@@ -61,7 +61,9 @@ Cameras are important for surveillance and motion detection. Using indoor and ou
 
 #### Lighting
 
-For indoor LED lighting, I am using Xiaomi Yeelight RGB bulbs. Yeelights use WiFi for communication, which has a slightly higher level of complexity and power utilization than a hub based solution such as the Philips Hue system, but provides a high level of independence to avoid situations where lighting is impacted by a single hub failure (leveraging the inherent WiFi redundancy that was established in the earlier design) and 
+For indoor LED lighting, I am using Xiaomi Yeelight RGB bulbs. Yeelights use WiFi for communication, which has a slightly higher level of complexity and power utilization than a hub based solution such as the Philips Hue system, but provides a high level of independence to avoid situations where lighting is impacted by a single hub failure (leveraging the inherent WiFi redundancy that was established in the earlier design) and requires less investment in centralised hub infrastructure.
+
+Throughout the house, we are using 17 Yeelights. These are controlled by HomeAssistant, 
 
 #### Temperature and Humidity Sensors
 
@@ -78,7 +80,7 @@ For measuring Temperature and Humidity, I have 5 Xiaomi sensors (AU$75) which pr
 
 In order to provide whole-house audio, I picked up 6 NEXX WT3050 devices (for $173) which provide 2 x 100Mbps ethernet ports, 1 USB port and 54Mbps WiFi. The NEXX devices are able to run OpenWRT, which provides great flexibility in configuring audio platforms.
 
-The OpenWrt distribution used is an unmodified OpenWrt Chaos Calmer installation, with x packages installed. The NEXX is a MediaTek-based SOC, 8MB of Flash and 64MB of RAM.
+The OpenWrt distribution used is an unmodified OpenWrt Chaos Calmer installation, with <a href="openwrt-wha.html">a number of packages</a> installed. The NEXX is a MediaTek-based SOC, 8MB of Flash and 64MB of RAM.
 
 <center>
   <img src="images/IMG_20170409_175646.jpg" />
@@ -104,3 +106,8 @@ Sometimes, fixed whole-house audio doesn't quite meet the requirement, and for t
   <br /><i>The portable ideaUSA W205 WiFi speakers, providing WiFi, Bluetooth and AUX Audio</i>
 </center>
 
+#### Streaming Video
+
+To provide video throughout the house, I have used 2 Beelink MINI MXIII II Android TV boxes, based on the Amlogic S905X Quad Core chipset, for a total of $126. The devices provide Kodi for video streaming.
+
+For viewing Netflix, I use PlayOn, a streaming video transcoder
