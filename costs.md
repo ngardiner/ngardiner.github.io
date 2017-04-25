@@ -27,8 +27,8 @@ Prices are AUD, order totals are USD
 | 10  | Xiaomi Door and Window Sensor     | $9.32    | $93.15  | ? |
 || Order Total - $150.21 + Insurance $4.00 = USD $154.21 |||
 || GB Order 5 - 28/03/2017 08:08AM ||| R |
-| 2   | Beelink MINI MXIII II TV Box      | $62.62   | $125.25 | N |
-| 5   | Xiaomi Yeelight RGBW E27 LED Bulb | $22.36   | $111.81 | N |
+| 2   | Beelink MINI MXIII II TV Box      | $62.62   | $125.25 | R |
+| 5   | Xiaomi Yeelight RGBW E27 LED Bulb | $22.36   | $111.81 | R |
 | 4   | ESCAM S2 POE Splitter Power Cord  | $12.82   | $51.28  | N |
 | 3   | Xiaomi Temperature and Humidity   | $13.49   | $40.46  | R |
 | 8   | Xiaomi Smart Wireless Switch      | $9.32    | $74.52  | R |
