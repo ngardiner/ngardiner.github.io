@@ -39,6 +39,11 @@ Prices are AUD, order totals are USD
 | 10  | Xiaomi Smart Human Body Sensor    | $11.58   | $115.81 | ? |
 | 10  | Xiaomi Door and Window Sensor     | $9.31    | $93.15  | ? |
 || Order Total - $426.84 + Insurance $9.54 = USD $436.38 |||
+|| AE Order 1 - 09/04/2017 00:47AM ||||
+| 6   | USB to 2.1mm 5V DC Barrel Jack    | $0.84    | $5.02   ||
+| 6   | MA-049 5.5 x 2.1 MM Micro USB     | $0.64    | $7.71   ||
+| 6   | MIC Headset 7.1 Ch 3D Audio Card  | $2.58    | $17.03  ||
+|| Order Total - $29.76 AUD = USD $22.39 |||
 || GB Order 7 - 17/04/2017 03:12AM ||| ? |
 | 1   | Gocomma Roidmi 2S Bluetooth V4.2  | $17.31   | $17.31  | ? |
 | 6   | ESCAM S2 POE Splitter Power Cord  | $12.82   | $76.92  | ? |
@@ -48,7 +53,12 @@ Prices are AUD, order totals are USD
 | 1   | Xiaomi Smart WiFi MFG Gateway     | | | ? |
 | 6   | Xiaomi Mi Smart WiFi Socket       | | | ? |
 
-## By Order
+## By AE Order
+| Order              | Total  |
+| ------------------ | ------ |
+| 09/04/2017 00:47AM | $22.39 |
+
+## By GB Order
 | Order              | Total   | GB Points Used       |
 | ------------------ | ------- | -------------------- |
 | 11/12/2016 11:08AM | $300.39 | 0 Points             |
