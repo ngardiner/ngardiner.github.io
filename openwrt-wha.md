@@ -39,12 +39,62 @@ This can cause significant issues for networks where Wireless clients are connec
 
 We configure pulseaudio on the OpenWRT routers to listen to Unicast TCP and Multicast UDP RDP streams from the network. This configuration will initialize the first hardware device detected by ALSA, 
 
+The purpose of the combine sink is to allow for anywhere from one to many audio devices connected to the system to be combined as a single output device to aggregate all of the connected speakers. To see which devices have been detected on your OpenWRT system, use the following command:
+
+```cat /proc/asound/devices```
+
+You will see output similar to the following. In this case I have connected two separate USB sound cards to the one system, so we would have a hw:0 and a hw:1 device available within pulseaudio. As long as both devices are initialized in the pulseaudio configuration using the module-alsa-sink load-module command, audio output will automatically output from both sound card devices.
+
+```
+root@nexx:/etc/pulse# cat /proc/asound/devices
+  0: [ 0]   : control
+ 16: [ 0- 0]: digital audio playback
+ 24: [ 0- 0]: digital audio capture
+ 32: [ 1]   : control
+ 33:        : timer
+ 48: [ 1- 0]: digital audio playback
+ 56: [ 1- 0]: digital audio capture
+```
+
+The following configuration would initialize one ALSA sink device (one USB sound card) and recieve 
+
 /etc/pulse/system.pa:
 ```
 load-module module-alsa-sink device=hw:0
 load-module module-rtp-recv
-load-module module-native-protocol-tcp
+load-module module-native-protocol-tcp auth-anonymous=1
+load-module module-esound-protocol-tcp auth-anonymous=1
 load-module module-combine-sink sink_name=combined
+set-default-sink combined
+```
+
+Stepping through this configuration in detail:
+
+- Line #1 initializes one ALSA sound device. If this is a multi-soundcard deployment, this will only initialize the first sound device. You would need to repeat this configuration for each additional sound device. Some sound devices may have multiple outputs such as a coaxial or optical output, in which case you can specify the particular output you would like to initialize using the [device],[output] specification, such as hw:0,1.
+
+- Line #2 will initialize RTP streaming functionality. This is the configuration which allows streaming Multicast or Unicast RTP to be streamed out of the speakers of all listening pulseaudio clients. It is possible to specify a particular Multicast address to bind to, however we do not modify the defaults.
+
+- Line #3 will enable the native pulseaudio TCP protocol. This allows zoning of audio by providing a way to stream audio to one particular unicast client. This also allows control of the volume of the zone from the Central Broadcast Server. We specify anonymous auth for this as we are providing IP level security for this implementation, however you may omit this, and use the built-in cookie authentication mechanism within pulseaudio for greater security. In practice, given we are allowing anonymous multicast RTP audio regardless of this setting, it is probably best to invest the time in universal IP-level security.
+
+- Line #4 will additionally enable the esound protocol. 
+
+- Line #5 will create the combined output sink, which by default will combine all connected/initialized output sink devices. This is exactly what we want, and saves 
+
+- Line #6 sets the combined audio output sink as the default output sink, ensuring that all audio streamed to the devices will play out of the combined audio sink device, and 
+
+If for some reason (I have not found a reason to do this, yet) we wanted to combine only some sources using the combined output sink, it is possible to do. I include this here only as a reference, this may come in handy in the event that a Raspberry Pi client is introduced and we want to avoid using the onboard audio device.
+
+The following example shows how to initialize three ALSA audio devices, give each a convenient name, and then specify the specific slaves that are to be combined using the combined sink.
+
+/etc/pulse/system.pa:
+```
+load-module module-alsa-sink device=hw:0 name=alsa0
+load-module module-alsa-sink device=hw:1 name=alsa1
+load-module module-alsa-sink device=hw:2 name=alsa2
+load-module module-rtp-recv
+load-module module-native-protocol-tcp auth-anonymous=1
+load-module module-esound-protocol-tcp auth-anonymous=1
+load-module module-combine-sink sink_name=combined slaves="alsa1,alsa2"
 set-default-sink combined
 ```
 
