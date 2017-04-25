@@ -1,14 +1,3 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset=utf-8 />
-  <title>CV of Nathan Gardiner</title>
-  <link href="media/cv-screen.css" type="text/css" rel="stylesheet" media="screen">
-  <link href="media/cv-print.css" type="text/css" rel="stylesheet" media="print">
-</head>
-<body>
-  <div id="main">
-  <div id="content">
 # Isaac Newton
 Physicist, Mathematician, Cambridge professor.
 
