@@ -56,6 +56,8 @@ root@nexx:/etc/pulse# cat /proc/asound/devices
  56: [ 1- 0]: digital audio capture
 ```
 
+#### PulseAudio Receiver Configuration
+
 The following configuration would initialize one ALSA sink device (one USB sound card) and recieve 
 
 /etc/pulse/system.pa:
@@ -97,6 +99,24 @@ load-module module-esound-protocol-tcp auth-anonymous=1
 load-module module-combine-sink sink_name=combined slaves="alsa1,alsa2"
 set-default-sink combined
 ```
+
+#### Per-Zone Volume/Mute Control
+
+Once you have the setup above, you can control the volume of the individual sound card devices or the combined mixer device using the graphical pavucontrol utility. Note that when adjusting the combined mixer device volume, the volume of each individual sound card will be in proportion to their 
+
+```PULSE_SERVER=192.168.29.134 pavucontrol```
+
+This is helpful when sitting in front of a graphical console, but is not so helpful when automating or centralising the control of your Whole House Audio deployment. 
+
+```
+PULSE_SERVER=192.168.29.134 pactl set-sink-mute 2 toggle
+PULSE_SERVER=192.168.29.134 pactl set-sink-mute 2 on
+PULSE_SERVER=192.168.29.134 pactl set-sink-mute 2 off
+```
+
+Individual direct output sinks can be created on the Central Broadcast server
+
+pacmd load-module module-tunnel-sink server=192.168.1.1
 
 ## Feed-in Inputs/Transmitters
 
