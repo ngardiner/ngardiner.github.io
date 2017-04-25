@@ -115,7 +115,7 @@ We use two separate strings of 3 NEXX devices in series to provide the 6 zones o
 Sometimes, fixed whole-house audio doesn't quite meet the requirement, and for this I purchased 3 IdeaUSA W205 portable WiFi speakers, which cost $230 in total. The speakers connect via WiFi to our wireless network, and are able to stream audio on multiple protocols including Airplay.
 
 <center>
-  <img src="images/IMG_20170409_163837.jpg" width=300 />
+  <a href="images/IMG_20170409_163837.jpg"><img src="images/IMG_20170409_163837_sm.jpg" /></a>
   <br /><i>The portable ideaUSA W205 WiFi speakers, providing WiFi, Bluetooth and AUX Audio</i>
 </center>
 
