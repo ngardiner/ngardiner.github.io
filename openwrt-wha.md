@@ -4,7 +4,7 @@
 
 In order to provide whole-house audio, we need to install audio packages onto the OpenWRT mini-router devices to provide network streaming of audio. 
 
-I found a lot of information on audio streaming online, however none of the solutions offered met the requirement that I have - namely to use the network throughout the house as an audio delivery channel to provide both multiple inputs and multiple outputs. Other examples show how to integrate in an MP3 player or similar, but none show how to create an audio fabric.
+I found a lot of information on audio streaming online, however none of the solutions offered met the requirement that I have - namely to use the network throughout the house as an audio delivery channel to provide both multiple inputs and multiple outputs. Other examples show how to integrate in an MP3 player or similar, but none show how to create a full whole-house audio fabric.
 
 To do this, there will be three distinct components:
 
@@ -18,9 +18,21 @@ Be aware that the method proposed in this document will result in a permanent 44
 
 This can cause significant issues for networks where Wireless clients are connected. In this configuration, we have used an isolated VLAN for wired-only entertainment devices and PCs, on which the receivers and central broadcast server sit. If wireless clients are connected to this network, they will receive a stream of rtp data at a rate of 174kbps each, causing unnecessary load.
 
+It is absolutely possible to instead create a set of unicast output sinks, and combine them together into a combined sink, which would remove the multicast stream from the network. The downside of such a model is that it would involve the trunking of several times the amount of audio, unless all of the units were connected to the same switch. I would note if you are embarking on this form of combined streaming that <a href="http://www.almost-working.com/multiroom-synced-audio-using-openwrt-and-pulseaudio/">some sources</a> report the combining of unicast sinks to be unstable and prone to latency issues.
+
 ### Diagram
 
 <img src="images/wha.png" />
+
+### PulseAudio Configuration
+
+If you're new to pulse, which I am, you might find the format of the configuration confusing. Initially, I was configuring the default.pa file on the OpenWRT routers and finding that it did not result in the expected audio output. On the Central Broadcast server side, it did. Why?
+
+There are multiple ways to engage pulse. On OpenWRT, it will start pulse using an init script, and will pass the --system parameter to PulseAudio. This means that one pulse process will run for the entire system. On a graphical Debian or Ubuntu system, 
+
+- Configuration for the OpenWRT pulseaudio receiver devices should be performed in the system.pa file. It is advisable to remove all of the default system.pa configuration and only use the configuration lines below, as the additional modules and 
+
+- Configuration for the Central Broadcast server should be performed using the default.pa file. Avoid removing lines not mentioned in the configuration section of this walkthrough, as we want to maintain as much functionality as possible on this system.
 
 ## Receivers
 
@@ -37,7 +49,7 @@ This can cause significant issues for networks where Wireless clients are connec
 
 ### Configuration
 
-We configure pulseaudio on the OpenWRT routers to listen to Unicast TCP and Multicast UDP RDP streams from the network. This configuration will initialize the first hardware device detected by ALSA, 
+We configure pulseaudio on the OpenWRT routers to listen to Unicast TCP and Multicast UDP RDP streams from the network. This configuration will initialize the first hardware device detected by ALSA, listen for RTP audio and output it to this device.
 
 The purpose of the combine sink is to allow for anywhere from one to many audio devices connected to the system to be combined as a single output device to aggregate all of the connected speakers. To see which devices have been detected on your OpenWRT system, use the following command:
 
@@ -58,15 +70,23 @@ root@nexx:/etc/pulse# cat /proc/asound/devices
 
 #### Audio Devices
 
-A short discussion about audio devices before we continue on to the receiver configuration topic. For this setup, we've trialled a number of cheaper USB audio devices. Whilst I would love to have impressive USB DAC devices throughout the house, they are both expensive and require external power, which makes them inappropriate for this use. A key requirement of the DAC is that it must be USB bus powered, to take advantage of the POE power delivery method we use. This limits us to the lower end of DAC devices.
+A short discussion about audio devices before we continue on to the receiver configuration topic. For this setup, we've trialled a number of cheaper USB audio devices. Whilst I would love to have expensive USB DAC devices throughout the house, they are both expensive and require external power, which makes them inappropriate for this use. A key requirement of the DAC is that it must be USB bus powered, to take advantage of the POE power delivery method we use. This limits us to the lower end of DAC devices.
 
 The first devices that I ordered for testing of the whole house audio setup were a well-known generic brand of USB SoundCard known as the Generalplus Technology Inc 7.1ch USB SoundCard, with a USB ID of 1B3F:2008. I did not find a large amount of information about these cards, which is surprising as they are very widespread.
 
 <img src="images/IMG_20170425_083720.jpg" />
 
-I can say that my experience with these devices was rather poor. From reading online, I noted that 
+I can say that my experience with these devices was rather poor. From reading online, I noted that Generalplus develop a number of USB devices which are of a very similar nature and quality. The other two commonly seen Generalplus USB audio devices are these:
 
 <img src="images/71ch.jpg" /> <img src="images/generaltech.jpg" />
+
+Audio from these devices is quite flat. The quality is suitable for some areas of a house, but overall was quite unimpressive. Adding to this a poor build quality, and I could not recommend this particular model. Even if you are going to purchase a cheap USB audio device, I would avoid this one, I have found the build quality of the "3D Audio" USB devices - which are cheaper - to be better. In addition, the multiple "channels" on this card do not exist, each input and output is not individually addressible, so you end up with a set of large USB audio devices with no appreciable features.
+
+<img src="images/IMG_20170425_083855.jpg" />
+
+<br /><i>Build quality issues with the devices I received</i>
+
+Unfortunately, 3 of the 6 devices that I purchased off of AliExpress for $17 to be used for audio testing were DOA - two of them visibly damaged in transit, and the third unable to hold a stereo output signal (got alternating mono depending on if it was half or fully plugged in). After hearing the audio quality, this was not of great concern.
 
 #### PulseAudio Receiver Configuration
 
@@ -112,23 +132,41 @@ load-module module-combine-sink sink_name=combined slaves="alsa1,alsa2"
 set-default-sink combined
 ```
 
-In addition to the above configuration, the following settings should be set in the /etc/pulse/daemon.conf file. Without these settings, the low powered MIPS devices we use will go to 100% CPU trying to resample audio using floating point math not 
+In addition to the above configuration, the following settings should be set in the /etc/pulse/daemon.conf file. Without these settings, the low powered MIPS devices we use will go to 100% CPU trying to resample audio using floating point math not able to be offloaded to an optimized floating point unit by the processor.
 
+```
 exit-idle-time = -1
+resample-method = trivial
+flat-volumes = no
+```
 
+- exit-idle-time avoids the PulseAudio daemon terminating due to inactivity.
+
+- resample-method ensures that we do not use floating point math to resample audio, which would send the CPU rocketing.
+
+- flat-volumes allows the loudest application to set the system volume. This is disabled so that a misbehaving application on the Central Broadcast Server doesn't blow speakers or eardrums!
 
 #### Per-Zone Volume/Mute Control
 
-Once you have the setup above, you can control the volume of the individual sound card devices or the combined mixer device using the graphical pavucontrol utility. Note that when adjusting the combined mixer device volume, the volume of each individual sound card will be in proportion to their 
+Once you have the setup above, you can control the volume of the individual sound card devices or the combined mixer device using the graphical pavucontrol utility. Note that when adjusting the combined mixer device volume, the volume of each individual sound card will be in proportion to their individual volume settings.
 
 ```PULSE_SERVER=192.168.29.134 pavucontrol```
 
 This is helpful when sitting in front of a graphical console, but is not so helpful when automating or centralising the control of your Whole House Audio deployment. 
 
+The following commands will toggle the mute setting of any one audio device. The Sink ID (eg 0, 1, 2) aligns with the sink configured, with the last sink ID always being the combined audio sink, and the first IDs being the individual sound card devices.
+
 ```
 PULSE_SERVER=192.168.29.134 pactl set-sink-mute 2 toggle
 PULSE_SERVER=192.168.29.134 pactl set-sink-mute 2 on
 PULSE_SERVER=192.168.29.134 pactl set-sink-mute 2 off
+```
+
+Similarly, volumes can be set per Sink ID using a percentage value from 0% - 153%, however audio over 100% will be subject to distortion and clipping. The value 65535 is equivalent to 100% and can be used in its place. 
+
+```
+PULSE_SERVER=192.168.29.134 pactl set-sink-volume 2 100%
+PULSE_SERVER=192.168.29.134 pactl set-sink-volume 2 65535
 ```
 
 Individual direct output sinks can be created on the Central Broadcast server
@@ -137,10 +175,83 @@ pacmd load-module module-tunnel-sink server=192.168.1.1
 
 ## Feed-in Inputs/Transmitters
 
-Becuase of the use of pulseaudio as the transmission layer, with MPD managing audio sources, we have a large amount of flexibility in 
+Becuase of the use of pulseaudio as the transmission layer, with MPD managing audio sources, we have a large amount of flexibility in accepting audio inputs for transmission. The three ways in which we can
+
+- Audio can be sent to pulseaudio directly using what?
+
+- Audio can be sent to MPD through MPD compatible clients such as:
+   - Ampache
+   - mpc
+   - M.A.L.P, an Android MPD client
+   - impdclient, an iPhone MPD client
 
 ## Central Broadcast Server
 
 A central broadcast server can be hosted on any number of platforms (including but not limited to VM, Raspberry Pi or even potentially but not advisably an OpenWRT router.
 
 For this deployment, we are using a Debian 8 
+
+### MPD and PulseAudio Configuration
+
+In /etc/mpd.conf, disable the default audio_output setting for 
+
+```
+audio_output {
+        type            "pulse"
+        name            "MPD RTP"
+        sink            "rtp"
+        mixer_type      "software"
+}
+```
+
+In /etc/pulse/default.pa
+
+```
+load-module module-zeroconf-publish
+
+load-module module-null-sink sink_name=rtp format=s16be channels=2 rate=44100 sink_properties="device.description='RTP Multicast Sink'"
+load-module module-rtp-send source=rtp.monitor
+```
+
+Because PulseAudio is running in per-user mode, at this point you will need to kill the pulseaudio daemon running for the current user, to allow these settings to take effect. You can do this with:
+
+```pulseaudio -k```
+
+In most cases, it will respawn. If not, you can start it manually with:
+
+```pulseaudio --start```
+
+### Ampache
+
+On your mariadb server, create the ampache database, which is necessary for installation:
+
+mysql -e "CREATE DATABASE ampache"
+mysql -e "GRANT ALL ON ampache.* to 'ampache'@'192.168.28.12' IDENTIFIED BY 'password'"
+
+Install Ampache with the following command:
+
+```apt-get install ampache mysql-client```
+
+Populate the ampache database, and default ampache configuration:
+
+```
+cat /usr/share/ampache/www/sql/ampache.sql | mysql -h 192.168.24.10 -u ampache -p ampache
+cp /usr/share/ampache/www/config/ampache.cfg.php.dist /etc/ampache/ampache.cfg.php
+```
+
+Edit ampache.cfg.php and set the following variables, ensuring they are appropriate to your installation:
+
+```
+web_path        = "/ampache"
+database_hostname = 192.168.24.10
+database_name = ampache
+database_username = ampache
+database_password = password
+use_auth        = "false"
+```
+
+Navigate to the ampache page: http://127.0.0.1/ampache
+
+- Add a user account with the admin privilege level, which can be used to log in to ampache.
+
+- Edit the configuration file and re-enable authentication.
