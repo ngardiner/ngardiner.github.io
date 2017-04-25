@@ -14,9 +14,9 @@ To do this, there will be three distinct components:
 
 ### Network Utilization
 
-Be aware that the method proposed in this document will result in a permanent 44100KHz uncompressed rtp stream multicast across the network. Even during times where the audio inputs are 
+Be aware that the method proposed in this document will result in a permanent 44100KHz uncompressed rtp stream multicast across the network. Even during times where the audio inputs are not transmitting anything, the stream will continue to be broadcast and the individual sound devices will continue to be active.
 
-This can cause significant issues for networks where Wireless clients are connected. In this configuration, we have used an isolated VLAN for wired-only entertainment devices and PCs, on which the receivers and central broadcast server sit.
+This can cause significant issues for networks where Wireless clients are connected. In this configuration, we have used an isolated VLAN for wired-only entertainment devices and PCs, on which the receivers and central broadcast server sit. If wireless clients are connected to this network, they will receive a stream of rtp data at a rate of 174kbps each, causing unnecessary load.
 
 ### Diagram
 
@@ -56,9 +56,21 @@ root@nexx:/etc/pulse# cat /proc/asound/devices
  56: [ 1- 0]: digital audio capture
 ```
 
+#### Audio Devices
+
+A short discussion about audio devices before we continue on to the receiver configuration topic. For this setup, we've trialled a number of cheaper USB audio devices. Whilst I would love to have impressive USB DAC devices throughout the house, they are both expensive and require external power, which makes them inappropriate for this use. A key requirement of the DAC is that it must be USB bus powered, to take advantage of the POE power delivery method we use. This limits us to the lower end of DAC devices.
+
+The first devices that I ordered for testing of the whole house audio setup were a well-known generic brand of USB SoundCard known as the Generalplus Technology Inc 7.1ch USB SoundCard, with a USB ID of 1B3F:2008. I did not find a large amount of information about these cards, which is surprising as they are very widespread.
+
+<img src="images/IMG_20170425_083720.jpg" />
+
+I can say that my experience with these devices was rather poor. From reading online, I noted that 
+
+<img src="images/71ch.jpg" /> <img src="images/generaltech.jpg" />
+
 #### PulseAudio Receiver Configuration
 
-The following configuration would initialize one ALSA sink device (one USB sound card) and recieve 
+The following configuration would initialize one ALSA sink device (one USB sound card) and recieve audio via any RTP stream, TCP pulseaudio or tcp esound connection. It would combine any of the sink devices listed and use this combined output for audio.
 
 /etc/pulse/system.pa:
 ```
@@ -99,6 +111,11 @@ load-module module-esound-protocol-tcp auth-anonymous=1
 load-module module-combine-sink sink_name=combined slaves="alsa1,alsa2"
 set-default-sink combined
 ```
+
+In addition to the above configuration, the following settings should be set in the /etc/pulse/daemon.conf file. Without these settings, the low powered MIPS devices we use will go to 100% CPU trying to resample audio using floating point math not 
+
+exit-idle-time = -1
+
 
 #### Per-Zone Volume/Mute Control
 
