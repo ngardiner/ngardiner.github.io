@@ -29,7 +29,12 @@ Here, you can see the North zone cabinet under construction. Power Strips have b
 
 ### Security
 
-Security is an important subject when considering Home Automation. Many of our Home Automation components (including Yeelight, Xiaomi Gateway) by default connect to the Internet to 
+Security is an important subject when considering Home Automation. Many of our Home Automation components (including Yeelight, Xiaomi Gateway) by default connect to the Internet to allow remote control of the devices. 
+
+Insecure IoT devices introduce a large security risk to your home. Not only can these devices be hijacked by attackers to launch attacks against other targets, an attacker with access to your network can compromise your safety, security and privacy. To ensure that your IoT devices are protected, the following security 
+
+- Place IoT devices in a dedicated IoT VLAN
+- Block all Internet connectivity for these devices.
 
 ## Components
 
@@ -37,9 +42,9 @@ Security is an important subject when considering Home Automation. Many of our H
 
 Our Home Automation switching and routing platform provides a network backbone of up to 4Gbps, though the use of Link Aggregation on TP-Link Gigabit POE switches. These form the core distribution network throughout the house, with 2 ports aggregated together in each direction, carrying all of the VLANs throughout the house.
 
-Each of the backbone switches are connected to one TP-Link Archer C7 Gigabit Wifi router. These routers offer an additional 4 ports, 1 of which is reserved for WAN connectivity, and another reserved to connect to a TP-Link TL-MR3020 or TL- which were previously used as Wifi routers, but have been converted into "smart switches" capable of offloading some of the network services
+Each of the backbone switches are connected to one TP-Link Archer C7 Gigabit Wifi router. These routers offer an additional 4 ports, 1 of which is reserved for WAN connectivity, and another reserved to connect to a TP-Link TL-MR3020 or TL- which were previously used as Wifi routers, but have been converted into "smart switches" capable of offloading some of the network services such as DNS and DHCP.
 
-All of the switches + routers outside of the backbone POE routers are running OpenWRT 
+All of the switches + routers outside of the backbone POE routers are running OpenWRT. 
 
 ### Virtualization Platform
 
@@ -63,7 +68,7 @@ Cameras are important for surveillance and motion detection. Using indoor and ou
 
 For indoor LED lighting, I am using Xiaomi Yeelight RGB bulbs. Yeelights use WiFi for communication, which has a slightly higher level of complexity and power utilization than a hub based solution such as the Philips Hue system, but provides a high level of independence to avoid situations where lighting is impacted by a single hub failure (leveraging the inherent WiFi redundancy that was established in the earlier design) and requires less investment in centralised hub infrastructure.
 
-Throughout the house, we are using 17 Yeelights. These are controlled by HomeAssistant, 
+Throughout the house, we are using 17 Yeelights. These are controlled by HomeAssistant, and grouped together into location-based groups. In HomeAssistant, we can assign time and motion based automations to turn on or off the lights as necessary.
 
 #### Temperature and Humidity Sensors
 
@@ -74,13 +79,21 @@ For measuring Temperature and Humidity, I have 5 Xiaomi sensors (AU$75) which pr
   <br /><i>The Xiaomi Temperature and Humidity Sensor</i>
 </center>
 
-<p>The remaining two Temperature and Humidity sensors are wall-mounted indoors, at either side of the house. These are used to monitor the indoor temperature to determine when to activate Air Conditioning or Heating, and can also aid in understanding whether to activate lights or to sound warnings.
+The remaining two Temperature and Humidity sensors are wall-mounted indoors, at either side of the house. These are used to monitor the indoor temperature to determine when to activate Air Conditioning or Heating, and can also aid in understanding whether to activate lights or to sound warnings.
+
+#### Humam Body Sensor
+
+The Xiaomi Human Body Sensor provides a PIR sensor
+
+#### Door and Window Sensor
+
+Xiaomi Door and Window Sensors can be placed at the edge of window, door and drawer openings to measure 
 
 ### Whole-house Audio
 
 In order to provide whole-house audio, I picked up 6 NEXX WT3050 devices (for $173) which provide 2 x 100Mbps ethernet ports, 1 USB port and 54Mbps WiFi. The NEXX devices are able to run OpenWRT, which provides great flexibility in configuring audio platforms.
 
-The OpenWrt distribution used is an unmodified OpenWrt Chaos Calmer installation, with <a href="openwrt-wha.html">a number of packages</a> installed. The NEXX is a MediaTek-based SOC, 8MB of Flash and 64MB of RAM.
+The OpenWrt distribution used is an unmodified OpenWrt Chaos Calmer installation, with <a href="openwrt-wha.html">a number of packages</a> installed. The NEXX is a MediaTek-based SOC, with 8MB of Flash and 64MB of RAM.
 
 <center>
   <img src="images/IMG_20170409_175646.jpg" />
