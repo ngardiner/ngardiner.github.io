@@ -9,37 +9,40 @@ title: Nathan Gardiner's CV
 <div id="webaddress">
 <a href="ngardiner@gmail.com">ngardiner@gmail.com</a>
 | Melbourne, VIC, Australia | 0451 796 387
-| <a href="http://en.wikipedia.org/wiki/Isaac_Newton">My wikipedia page</a>
+| <a href="https://ngardiner.github.io">GitHub</a>
 </div>
 
 ## Currently
 
-Providing vendor Professional Services solutions to customers
+Providing vendor Professional Services solutions to customers, enhancing ROI on Network Security infrastructure investment and leveraging new technologies to benefit customers.
 
 ### Specialized in
 
-Automation, Network, network Security
+Automation, Network, Network Security, Scripting (perl, php, python)
 
 ## Education
 
 `2015`
-__Swinburne University of Technology, Melbourne, Australia__
+__Swinburne University of Technology, Melbourne, Australia__ Bachelor of Technology (Information Systems)
 
 `2016`
-__Royal Melbourne Institute of Technology, Melbourne, Australia__
+__Royal Melbourne Institute of Technology, Melbourne, Australia__ Bachelor of Technology (Computing Studies)
 
 `2017`
-__Charles Sturt University, Sydney, Australia__
+__Charles Sturt University, New South Wales, Australia__ Graduate Certificate (Information Systems Security)
 
 ## Employment History
 
-`1600`
-__Royal Mint__, London
+`May 2002 - Jun 2004`
+__Managed WAN and Firewall Specialist__, Telstra InterNetworking Services, Bruce ACT
+
+`Sep 2001 - May 2002`
+__Software Developer__, Advantra Pty Ltd (now Telstra Enterprise Services), Bruce ACT
 
 - Warden
 - Minted coins
 
-`1600`
-__Lucasian professor of Mathematics__, Cambridge University
+`May 2000 - Sep 2001`
+__Application and System Support__, Advantra Pty Ltd (now Telstra Enterprise Services), Bruce ACT
 
-<!-- ### Footer Last updated: May 2013 -->
+<!-- ### Footer Last updated: April 2017 -->
