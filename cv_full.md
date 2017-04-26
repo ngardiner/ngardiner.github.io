@@ -14,7 +14,7 @@ title: Nathan Gardiner
 
 ## Currently
 
-17+ Year IT Specialist providing industry pioneer Vendor Professional Services solutions to customers, enhancing ROI on Network Security infrastructure investment and leveraging new technologies to reduce effort and cost and increase time to market and protection coverage. Focused on efficiency, predictability and stability.
+17+ year IT Specialist providing industry pioneer Vendor Professional Services solutions to customers, enhancing ROI on Network Security infrastructure investment and leveraging new technologies to reduce effort, cost and time to market and improving security protection coverage. Focused on efficiency, predictability and stability.
 
 ## Specialisation
 
@@ -32,7 +32,7 @@ __Royal Melbourne Institute of Technology, Melbourne, Australia__ Bachelor of Te
 __Charles Sturt University, New South Wales, Australia__ Graduate Certificate in Information Systems Security
 
 `2018`
-__Charles Sturt University, New South Wales, Australia__ Master in Information Systems Security *(currently studying)*
+__Charles Sturt University, New South Wales, Australia__ Master in Information Systems Security *(currently studying - expected graduation Q1 2017)*
 
 ## Industry Certification
 
@@ -54,7 +54,10 @@ __ISC&#178; Certified Information Systems Security Professional (CISSP)__ Attain
 
 ## Employment History
 
-`Oct 2014 - Current`
+`May 2017 - Present`
+__Professional Services__, Check Point Software Technologies, Melbourne VIC
+
+`Oct 2014 - May 2017`
 __Professional Services Area Manager, Asia__, Check Point Software Technologies, Singapore
 - Team management for Asia PS team, scoping and quoting for consulting opportunities, business development, high-level technical escalation, advisory, project management and delivery management. Improved business processes in PS through automation and technical knowledge transfer. Oversaw large Security Gateway virtualization refresh, large Endpoint Security deployment, OpenStack on-demand security product implementation.
 
@@ -66,6 +69,9 @@ __Senior Network Design and Delivery Engineer__, ANZ Bank, Singapore
 `Jan 2010 - Nov 2011`
 __Security Engineer__, Dimension Data, Sth Melbourne VIC *(Contract)*
 - Assigned full-time to ANZ Bank. Design and build of Network and Security solutions for projects; Firewall and IPSEC VPN, routing, NAT, Load Balancing and DMZ. Deployed various Web applications, assisted in deployment of Community of Interest Network VPN mesh, performed strategic migration of Internet and Mobile VPN for Singapore, Hong Kong and India. Reponsible for integration of purchased assets in Asia (Taiwan, Indonesia, Singapore and Hong Kong), standardisation of connectivity and security management, rebuild/standardisation of External Access facilities in each country, implementation of EIGRP and BGP dynamic routing in tactical Singapore Data Centre.
+
+`Mar 2009 - Jan 2010`
+__Security Engineer__, National Australia Bank, East Melbourne VIC *(Contract)*
 
 `Feb 2008 - Mar 2009`
 __Systems Engineer__, Deakin University, Geelong VIC *(Contract)*
