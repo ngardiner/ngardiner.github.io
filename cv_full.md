@@ -63,20 +63,22 @@ __Senior Network Design and Delivery Engineer__, ANZ Bank, Singapore
 - Technical Environment: Nexus 2K/5K/7K, Check Point IP Series, Cisco C65K, Radware Appdirector
 
 `Jan 2010 - Nov 2011`
-__Security Engineer__, Dimension Data, Sth Melbourne VIC _(Contract)_
+__Security Engineer__, Dimension Data, Sth Melbourne VIC *(Contract)*
 
 `Feb 2008 - Mar 2009`
-__Systems Engineer__, Deakin University, Geelong VIC _(Contract)_
+__Systems Engineer__, Deakin University, Geelong VIC *(Contract)*
+- P2V conversion of existing Linux (RHEL 4/5) systems to VMWare VI3. Performed Security Audit across RHEL/Solaris estate, Migrated and Upgraded Cognos BI environment, replaced university-wide LDAP directory and proxy cache infrastructure.
 
 `Jul 2007 - Jan 2008`
-__Linux Systems Engineer__, Coles Group Limited, Mulgrave VIC _(Contract)_
+__Linux Systems Engineer__, Coles Group Limited, Mulgrave VIC *(Contract)*
+- Implemented YaST (XML autoyast) deployment environment for SuSE Linux, incorporating account security, Tivoli management agents, System Monitoring and Inventory, Hardware Management and Clustering agents. Enhanced web-based resource management system for AIX Frame and HP SuperDome LPAR resources, VMWare Virtual Machines and Xen Domains.
 
 `Jun 2004 - Jun 2007`
 __Security & System Engineering__, Telstra Internet Development, Dickson ACT
 
 `May 2002 - Jun 2004`
 __Managed WAN and Firewall Specialist__, Telstra InterNetworking Services, Bruce ACT
-- Management of Check Point, Cisco PIX, Gauntlet, Sidewinder and Netscreen infrastructure.
+- Management and maintenance of customer Check Point, Cisco PIX, Gauntlet, Sidewinder and Netscreen infrastructure. Maintenance of UNIX environment supporting customer security environments. On-call support. NAT, IPSEC VPN, Logging/NMS, IDS services. Implementation and support of Managed DMZ product for commercial & govt incl. DNS, Proxy, Web and Mail Relay products.
 
 `Sep 2001 - May 2002`
 __Software Developer__, Advantra Pty Ltd (now Telstra Enterprise Services), Bruce ACT
