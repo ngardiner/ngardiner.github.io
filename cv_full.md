@@ -1,6 +1,8 @@
-| markdown | kramdown |
-| layout   | cv       |
-| title    | test     |
+---
+markdown: kramdown
+layout: cv
+title: test
+---
 
 # Nathan Gardiner
 
