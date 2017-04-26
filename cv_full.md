@@ -18,7 +18,7 @@ Providing vendor Professional Services solutions to customers, enhancing ROI on 
 
 ### Specialized in
 
-Automation, Network, Network Security, Scripting (perl, php, python), Systems (linux, kvm)
+Automation (ansible), Network (switching, routing), Network Security (endpoint, network), Scripting (perl, php, python), Systems & Virtualization (linux, kvm, xen)
 
 ## Education
 
@@ -71,10 +71,11 @@ __Systems Engineer__, Deakin University, Geelong VIC *(Contract)*
 
 `Jul 2007 - Jan 2008`
 __Linux Systems Engineer__, Coles Group Limited, Mulgrave VIC *(Contract)*
-- Implemented YaST (XML autoyast) deployment environment for SuSE Linux, incorporating account security, Tivoli management agents, System Monitoring and Inventory, Hardware Management and Clustering agents. Enhanced web-based resource management system for AIX Frame and HP SuperDome LPAR resources, VMWare Virtual Machines and Xen Domains.
+- Implemented XML autoYaST deployment environment for SuSE Linux, incorporating account security, Tivoli management agents, System Monitoring and Inventory, Hardware Management and Clustering agents. Enhanced web-based resource management system for AIX Frame and HP SuperDome LPAR resources, VMWare Virtual Machines and Xen Domains. Implemented Xen virtulization platform utilizing VT-x extensions and with SLES integration. Defined P2V migration processes for VMWare and Xen.
 
 `Jun 2004 - Jun 2007`
-__Security & System Engineering__, Telstra Internet Development, Dickson ACT
+__Security & Systems Engineering__, Telstra Internet Development, Dickson ACT
+- Designed and implemented core Internet infrastructure including DNS Resolvers, Authoritative DNS, News Servers, RADIUS Servers, Secondary MX SMTP and Operations Interface for management. Designed network component of new Sydney/Melbourne Server Farm including Load Balancing with OSPF integration, IPS and Firewall with an emphasis on availability and scalability. Performed IPv6 tunnel broker allocations.
 
 `May 2002 - Jun 2004`
 __Managed WAN and Firewall Specialist__, Telstra InterNetworking Services, Bruce ACT
