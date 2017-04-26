@@ -31,6 +31,9 @@ __Royal Melbourne Institute of Technology, Melbourne, Australia__ Bachelor of Te
 `2017`
 __Charles Sturt University, New South Wales, Australia__ Graduate Certificate (Information Systems Security)
 
+`2018`
+__Charles Sturt University, New South Wales, Australia__
+
 ## Industry Certification
 
 __Check Point Certified Security Associate (R77)__ Attained Nov 2015, Valid 2 Years
@@ -39,11 +42,11 @@ __Check Point Certified Security Expert (R77)__ Attained Dec 2015, Validity 2 Ye
 
 __Check Point Certified Security Master (R77)__ Attained Jan 2016, Validity 2 Years
 
-__Check Point Certified Managed Security Export + VSX (R77)__ Attained Mar 2016, Validity 2 Years
+__Check Point Certified Managed Security Expert + VSX (R77)__ Attained Mar 2016, Validity 2 Years
 
 ## Employment History
 
-`Jul 2007<br />Jan 2008`
+`Jul 2007` <br /> `Jan 2008`
 __Linux Systems Engineer__, Coles Group Limited, Mulgrave VIC
 
 `Jun 2004 - Jun 2007`
