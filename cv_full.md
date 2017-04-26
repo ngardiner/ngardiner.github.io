@@ -14,11 +14,11 @@ title: Nathan Gardiner
 
 ## Currently
 
-Providing vendor Professional Services solutions to customers, enhancing ROI on Network Security infrastructure investment and leveraging new technologies to benefit customers.
+17+ Year IT Specialist providing industry pioneer Vendor Professional Services solutions to customers, enhancing ROI on Network Security infrastructure investment and leveraging new technologies to reduce effort and cost and increase time to market and protection coverage. Focused on efficiency, predictability and stability.
 
 ## Specialisation
 
-Automation (ansible), Network (switching, routing), Network Security (cloud, encryption, endpoint, forensics, network), Scripting (perl, php, python), Systems & Virtualization (linux, kvm, xen)
+Automation (ansible), Network (switching, routing), Network Security (cloud, encryption, endpoint, forensics, network), Scripting (perl, php, python), Systems & Virtualization (linux, kvm, xen).
 
 ## Education
 
@@ -56,7 +56,7 @@ __ISC&#178; Certified Information Systems Security Professional (CISSP)__ Attain
 
 `Oct 2014 - Current`
 __Professional Services Area Manager, Asia__, Check Point Software Technologies, Singapore
-- Team management for Asia PS team, scoping and quoting for consulting opportunities, business development, high-level technical escalation, advisory, project management and delivery management. Improved business processes in PS through automation and technical knowledge transfer.
+- Team management for Asia PS team, scoping and quoting for consulting opportunities, business development, high-level technical escalation, advisory, project management and delivery management. Improved business processes in PS through automation and technical knowledge transfer. Oversaw large Security Gateway virtualization refresh, large Endpoint Security deployment, OpenStack on-demand security product implementation.
 
 `Nov 2011 - Oct 2014`
 __Senior Network Design and Delivery Engineer__, ANZ Bank, Singapore
