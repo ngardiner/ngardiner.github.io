@@ -18,7 +18,7 @@ Providing vendor Professional Services solutions to customers, enhancing ROI on 
 
 ### Specialized in
 
-Automation, Network, Network Security, Scripting (perl, php, python)
+Automation, Network, Network Security, Scripting (perl, php, python), Systems (linux, kvm)
 
 ## Education
 
@@ -33,14 +33,18 @@ __Charles Sturt University, New South Wales, Australia__ Graduate Certificate (I
 
 ## Employment History
 
+`Jul 2007 - Jan 2008`
+__Linux Systems Engineer__, Coles Group Limited, Mulgrave VIC
+
+`Jun 2004 - Jun 2007`
+__Security & System Engineering__, Telstra Internet Development, Dickson ACT
+
 `May 2002 - Jun 2004`
 __Managed WAN and Firewall Specialist__, Telstra InterNetworking Services, Bruce ACT
+- Management of Check Point, Cisco PIX, Gauntlet, Sidewinder and Netscreen infrastructure.
 
 `Sep 2001 - May 2002`
 __Software Developer__, Advantra Pty Ltd (now Telstra Enterprise Services), Bruce ACT
-
-- Warden
-- Minted coins
 
 `May 2000 - Sep 2001`
 __Application and System Support__, Advantra Pty Ltd (now Telstra Enterprise Services), Bruce ACT
