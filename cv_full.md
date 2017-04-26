@@ -1,7 +1,7 @@
 ---
 markdown: kramdown
 layout: cv
-title: test
+title: Nathan Gardiner's CV
 ---
 
 # Nathan Gardiner
