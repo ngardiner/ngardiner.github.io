@@ -1,13 +1,13 @@
 ---
 markdown: kramdown
 layout: cv
-title: Nathan Gardiner's CV
+title: Nathan Gardiner
 ---
 
 # Nathan Gardiner
 
 <div id="webaddress">
-<a href="ngardiner@gmail.com">ngardiner@gmail.com</a>
+<a href="mailto:ngardiner@gmail.com">ngardiner@gmail.com</a>
 | Melbourne, VIC, Australia | 0451 796 387
 | <a href="https://ngardiner.github.io">GitHub</a>
 </div>
@@ -16,7 +16,7 @@ title: Nathan Gardiner's CV
 
 Providing vendor Professional Services solutions to customers, enhancing ROI on Network Security infrastructure investment and leveraging new technologies to benefit customers.
 
-### Specialized in
+### Specialize in
 
 Automation (ansible), Network (switching, routing), Network Security (endpoint, network), Scripting (perl, php, python), Systems & Virtualization (linux, kvm, xen)
 
@@ -56,6 +56,7 @@ __ISC&#178; Certified Information Systems Security Professional (CISSP)__ Attain
 
 `Oct 2014 - Current`
 __Professional Services Area Manager, Asia__, Check Point Software Technologies, Singapore
+- Team management for Asia PS team, scoping and quoting for consulting opportunities, business development, high-level technical escalation, advisory, project management and delivery management. Improved business processes in PS through automation and technical knowledge transfer.
 
 `Nov 2011 - Oct 2014`
 __Senior Network Design and Delivery Engineer__, ANZ Bank, Singapore
