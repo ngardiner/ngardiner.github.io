@@ -33,12 +33,15 @@ Prices are AUD, order totals are USD
 | 3   | Xiaomi Temperature and Humidity   | $13.49   | $40.46  | R |
 | 8   | Xiaomi Smart Wireless Switch      | $9.32    | $74.52  | R |
 || Order Total - $302.64 + Insurance $7.05 = USD $309.69 |||
-|| GB Order 6 - 31/03/2017 01:33AM ||| ? |
-| 4   | ESCAM QD520 720P IP Camera        | $46.29   | $185.14 | ? |
-| 8   | Xiaomi Yeelight RGBW E27 LED Bulb | $21.84   | $174.74 | ? |
-| 10  | Xiaomi Smart Human Body Sensor    | $11.58   | $115.81 | ? |
-| 10  | Xiaomi Door and Window Sensor     | $9.31    | $93.15  | ? |
+|| GB Order 6 - 31/03/2017 01:33AM ||| N |
+| 4   | ESCAM QD520 720P IP Camera        | $46.29   | $185.14 | N |
+| 8   | Xiaomi Yeelight RGBW E27 LED Bulb | $21.84   | $174.74 | N |
+| 10  | Xiaomi Smart Human Body Sensor    | $11.58   | $115.81 | N |
+| 10  | Xiaomi Door and Window Sensor     | $9.31    | $93.15  | N |
 || Order Total - $426.84 + Insurance $9.54 = USD $436.38 |||
+|| Lightinthebox Order 1 - 05/04/2017 
+| 10  | B22 to E27 LED Bulbs Socket       | $1.27    | $12.73  | I |
+|| Order Total - $12.73 AUD + Postage $2.54 AUD = $15.27 AUD |||
 || AE Order 1 - 09/04/2017 00:47AM ||||
 | 6   | USB to 2.1mm 5V DC Barrel Jack    | $0.84    | $5.02   ||
 | 6   | MA-049 5.5 x 2.1 MM Micro USB     | $0.64    | $7.71   ||
@@ -52,6 +55,8 @@ Prices are AUD, order totals are USD
 | 2   | Foldable Dual-USB Dual Fan Cooler | | | ? |
 | 1   | Xiaomi Smart WiFi MFG Gateway     | | | ? |
 | 6   | Xiaomi Mi Smart WiFi Socket       | | | ? |
+|| CPL Online Orders ||||
+| 1   | TP-Link 8-Port Gigabit TL-SG2210P | $138.00  | $138.00 ||
 
 ## By AE Order
 | Order              | Total  |
