@@ -16,7 +16,7 @@ title: Nathan Gardiner
 
 Providing vendor Professional Services solutions to customers, enhancing ROI on Network Security infrastructure investment and leveraging new technologies to benefit customers.
 
-### Specialisation
+## Specialisation
 
 Automation (ansible), Network (switching, routing), Network Security (cloud, encryption, endpoint, forensics, network), Scripting (perl, php, python), Systems & Virtualization (linux, kvm, xen)
 
@@ -32,7 +32,7 @@ __Royal Melbourne Institute of Technology, Melbourne, Australia__ Bachelor of Te
 __Charles Sturt University, New South Wales, Australia__ Graduate Certificate in Information Systems Security
 
 `2018`
-__Charles Sturt University, New South Wales, Australia__ Master in Information Systems Security
+__Charles Sturt University, New South Wales, Australia__ Master in Information Systems Security *(currently studying)*
 
 ## Industry Certification
 
@@ -60,11 +60,12 @@ __Professional Services Area Manager, Asia__, Check Point Software Technologies,
 
 `Nov 2011 - Oct 2014`
 __Senior Network Design and Delivery Engineer__, ANZ Bank, Singapore
-- Design and Implementation of Asia infrastructure including Singapore Data Centre tactical and strategic migrations, Data Centre expansions, Markets HPC, Core Banking Replacement in , Payments B2B Service in Singapore
+- Design and Implementation of Asia infrastructure including Singapore Data Centre tactical and strategic migrations, Data Centre expansions, Markets HPC, Core Banking Replacement in Philippines and Hong Kong, Internet and Mobile Banking replacement in Hong Kong, Payments B2B Service in Singapore, worked with strategic partner to offer 10G managed MAN/WAN and B2B aggregation service, led 4 x Data Centre relocation efforts for network & security in Taiwan and Singapore.
 - Technical Environment: Nexus 2K/5K/7K, Check Point IP Series, Cisco C65K, Radware Appdirector
 
 `Jan 2010 - Nov 2011`
 __Security Engineer__, Dimension Data, Sth Melbourne VIC *(Contract)*
+- Assigned full-time to ANZ Bank. Design and build of Network and Security solutions for projects; Firewall and IPSEC VPN, routing, NAT, Load Balancing and DMZ. Deployed various Web applications, assisted in deployment of Community of Interest Network VPN mesh, performed strategic migration of Internet and Mobile VPN for Singapore, Hong Kong and India. Reponsible for integration of purchased assets in Asia (Taiwan, Indonesia, Singapore and Hong Kong), standardisation of connectivity and security management, rebuild/standardisation of External Access facilities in each country, implementation of EIGRP and BGP dynamic routing in tactical Singapore Data Centre.
 
 `Feb 2008 - Mar 2009`
 __Systems Engineer__, Deakin University, Geelong VIC *(Contract)*
