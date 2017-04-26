@@ -29,10 +29,10 @@ __Swinburne University of Technology, Melbourne, Australia__ Bachelor of Technol
 __Royal Melbourne Institute of Technology, Melbourne, Australia__ Bachelor of Technology (Computing Studies)
 
 `2017`
-__Charles Sturt University, New South Wales, Australia__ Graduate Certificate (Information Systems Security)
+__Charles Sturt University, New South Wales, Australia__ Graduate Certificate in Information Systems Security
 
 `2018`
-__Charles Sturt University, New South Wales, Australia__
+__Charles Sturt University, New South Wales, Australia__ Master in Information Systems Security
 
 ## Industry Certification
 
@@ -59,6 +59,8 @@ __Professional Services Area Manager, Asia__, Check Point Software Technologies,
 
 `Nov 2011 - Oct 2014`
 __Senior Network Design and Delivery Engineer__, ANZ Bank, Singapore
+- Design and Implementation of Asia infrastructure including Singapore Data Centre tactical and strategic migrations, Data Centre expansions, Markets HPC, Core Banking Replacement in , Payments B2B Service in Singapore
+- Technical Environment: Nexus 2K/5K/7K, Check Point IP Series, Cisco C65K, Radware Appdirector
 
 `Jan 2010 - Nov 2011`
 __Security Engineer__, Dimension Data, Sth Melbourne VIC _(Contract)_
