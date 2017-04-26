@@ -16,9 +16,9 @@ title: Nathan Gardiner
 
 Providing vendor Professional Services solutions to customers, enhancing ROI on Network Security infrastructure investment and leveraging new technologies to benefit customers.
 
-### Specialize in
+### Specialisation
 
-Automation (ansible), Network (switching, routing), Network Security (endpoint, network), Scripting (perl, php, python), Systems & Virtualization (linux, kvm, xen)
+Automation (ansible), Network (switching, routing), Network Security (cloud, encryption, endpoint, forensics, network), Scripting (perl, php, python), Systems & Virtualization (linux, kvm, xen)
 
 ## Education
 
