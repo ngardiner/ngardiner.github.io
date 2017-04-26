@@ -9,7 +9,7 @@ title: Nathan Gardiner
 <div id="webaddress">
 <a href="mailto:ngardiner@gmail.com">ngardiner@gmail.com</a>
 | Melbourne, VIC, Australia | 0451 796 387
-| <a href="https://ngardiner.github.io">GitHub</a>
+| <a href="https://ngardiner.github.io">GitHub</a> | <a href="https://au.linkedin.com/in/ngardiner">LinkedIn</a>
 </div>
 
 ## Currently
