@@ -1,3 +1,7 @@
+| markdown | kramdown |
+| layout   | cv       |
+| title    | test     |
+
 # Nathan Gardiner
 
 <div id="webaddress">
