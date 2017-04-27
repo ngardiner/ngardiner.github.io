@@ -42,9 +42,15 @@ Insecure IoT devices introduce a large security risk to your home. Not only can 
 
 Our Home Automation switching and routing platform provides a network backbone of up to 4Gbps, though the use of Link Aggregation on TP-Link Gigabit POE switches. These form the core distribution network throughout the house, with 2 ports aggregated together in each direction, carrying all of the VLANs throughout the house.
 
-Each of the backbone switches are connected to one TP-Link Archer C7 Gigabit Wifi router. These routers offer an additional 4 ports, 1 of which is reserved for WAN connectivity, and another reserved to connect to a TP-Link TL-MR3020 or TL- which were previously used as Wifi routers, but have been converted into "smart switches" capable of offloading some of the network services such as DNS and DHCP.
+Each of the backbone switches are connected to one TP-Link Archer C7 Gigabit Wifi router. These routers offer an additional 4 ports, 1 of which is reserved for WAN connectivity, and another reserved to connect to a TP-Link TL-MR3020 or TL-WR1043ND which were previously used as Wifi routers, but have been converted into "smart switches" capable of offloading some of the network services such as DNS and DHCP.
 
-All of the switches + routers outside of the backbone POE routers are running OpenWRT. 
+All of the switches + routers outside of the backbone POE routers are running <a href="openwrt-rtr.html">OpenWRT</a>. The previous link goes into some detail about how network redundancy and WAN connectivity is achieved, using dynamic routing and VRRP.
+
+Unique to this environment are two particular features:
+- Decentralised Routing
+- Static DHCP - We use DHCP for auto-configuration of device configuration, however almost all DHCP allocations are performed from static allocations. There are small (4-5 IP) allocations per VLAN for each router, however these are intended for detecting the MAC addresses of new devices, which are then added as a static lease.
+
+Using the OpenWRT configuration tool linked in my GitHub repo, we are generating the leases from CSV files which also serve as our IPAM system. 
 
 ### Virtualization Platform
 
@@ -108,7 +114,11 @@ To connect the USB audio devices to the NEXX devices, I purchased 6 rotatable 3-
 
 The NEXX WT3050 devices have a USB port and two ethernet ports. This in effect allows daisy-chaining the NEXX devices through the house for whole-house audio, but with some limitations. The NEXX can support up to 1.2a at 5V (in fact, this is closer to 1.7a in practice) and consumes between 180mA during boot, to 130mA during standard operation.
 
-We use two separate strings of 3 NEXX devices in series to provide the 6 zones of whole-house audio. 
+We use two separate strings of 3 NEXX devices in series to provide the 6 zones of whole-house audio. I tested with a number of NEXX units in series and found that after 3 devices, the behaviour of the 4th device becomes unstable due to voltage drop. With 3 devices, even with USB DAC devices attached, I was able to get stable, full functionality.
+
+THe following image shows the configuration of the 6 NEXX devices, 4 of which are coupled to input POE synthesizers and output POE injectors, and the last two having free ethernet ports.
+
+In this image, the two sets of whole-house audio POE strings are connected to power sources and networked together.
 
 #### Portable Speakers
 
