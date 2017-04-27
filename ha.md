@@ -6,7 +6,7 @@ Home Automation is an exciting new area of technology for anyone with an interes
 
 For anyone with scripting and automation background, Home Automation provides a way to outsource things we would typically manage manually to smart processes which are able to read and react to many dynamic values from dynamic sensors around our home.
 
-For around $x, we have managed to turn our house into a Smart House, 
+For around $x, we have managed to turn our house into a Smart House, providing time saving and lifestyle improving routines to make our lives easier, increasing our security and safety, and
 
 ## System Architecture
 
@@ -31,10 +31,14 @@ Here, you can see the North zone cabinet under construction. Power Strips have b
 
 Security is an important subject when considering Home Automation. Many of our Home Automation components (including Yeelight, Xiaomi Gateway) by default connect to the Internet to allow remote control of the devices. 
 
-Insecure IoT devices introduce a large security risk to your home. Not only can these devices be hijacked by attackers to launch attacks against other targets, an attacker with access to your network can compromise your safety, security and privacy. To ensure that your IoT devices are protected, the following security 
+Insecure IoT devices introduce a large security risk to your home. Not only can these devices be hijacked by attackers to launch attacks against other targets, an attacker with access to your network can compromise your safety, security and privacy. To ensure that your IoT devices are protected, the following security steps can provide isolation:
 
-- Place IoT devices in a dedicated IoT VLAN
+- Place IoT devices in a dedicated IoT VLAN.
 - Block all Internet connectivity for these devices.
+- Temporarily provide access to individual devices when they are first added (to allow updates/onboarding).
+- Enable local API access to IoT equipment where possible.
+- Remove Internet access to devices which do not require this access.
+- Drill-down further into the communications between equipment and "cloud services" and limit it accordingly.
 
 ## Components
 
@@ -47,7 +51,7 @@ Each of the backbone switches are connected to one TP-Link Archer C7 Gigabit Wif
 All of the switches + routers outside of the backbone POE routers are running <a href="openwrt-rtr.html">OpenWRT</a>. The previous link goes into some detail about how network redundancy and WAN connectivity is achieved, using dynamic routing and VRRP.
 
 Unique to this environment are two particular features:
-- Decentralised Routing
+- Decentralised Routing - Every <a href="openwrt-rtr.html">OpenWRT</a> router is an independent router with a full routing table synchronised via OSPF, 
 - Static DHCP - We use DHCP for auto-configuration of device configuration, however almost all DHCP allocations are performed from static allocations. There are small (4-5 IP) allocations per VLAN for each router, however these are intended for detecting the MAC addresses of new devices, which are then added as a static lease.
 
 Using the OpenWRT configuration tool linked in my GitHub repo, we are generating the leases from CSV files which also serve as our IPAM system. 
@@ -93,7 +97,9 @@ The Xiaomi Human Body Sensor provides a PIR sensor
 
 #### Door and Window Sensor
 
-Xiaomi Door and Window Sensors can be placed at the edge of window, door and drawer openings to measure 
+Xiaomi Door and Window Sensors can be placed at the edge of window, door and drawer openings to detect when a door, window or drawer is opened. These sensors are extremely important for Security functionality, in that they can detect intrusions and door opening states regardless of the state of other sensors.
+
+This is a layered security approach, where failure of other sensor mechanisms are accommodated for with immediate alarms triggered on opening of doors in secured areas of the property.
 
 ### Whole-house Audio
 
