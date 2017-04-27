@@ -70,9 +70,11 @@ Distributed Storage is provided through Ceph
 
 #### Cameras
 
-Cameras are important for surveillance and motion detection. Using indoor and outdoor cameras managed by Zoneminder, we are able to monitor the property remotely and detect motion events. In the event of an attempted break-in, our door and window sensors will detect the attempted 
+Cameras are important for surveillance and motion detection. Using indoor and outdoor cameras managed by Zoneminder, we are able to monitor the property remotely and detect motion events. In the event of an attempted break-in, our door and window sensors will detect the attempted access, and are then able to trigger recording across all zones in Zoneminder.
 
-6 outdoor cameras ($313) and 4 indoor cameras ($185) 
+Our camera security set-up consists of 6 outdoor cameras (at a cost of $313) and 4 indoor cameras (at a cost of $185). All of the cameras are ESCAM cameras, chosen due to their compatibility with ONVIF and POE. This means that all of the cameras can be powered by UPS protected POE switches, and monitored via standardised ONVIF-compatible tools.
+
+HomeAssistant integrates with Zoneminder by providing a 
 
 #### Lighting
 
@@ -100,6 +102,12 @@ The Xiaomi Human Body Sensor provides a PIR sensor
 Xiaomi Door and Window Sensors can be placed at the edge of window, door and drawer openings to detect when a door, window or drawer is opened. These sensors are extremely important for Security functionality, in that they can detect intrusions and door opening states regardless of the state of other sensors.
 
 This is a layered security approach, where failure of other sensor mechanisms are accommodated for with immediate alarms triggered on opening of doors in secured areas of the property.
+
+#### Wireless Switches
+
+Xiaomi Wireless Switches are small battery powered zigbee devices, which can be mounted on walls, tables, or even carried around. During tests, button presses were picked up from several rooms away without issues. The switches are capable of three different events - Click, Double Click and Long Click.
+
+These buttons are used for a number of different purposes. Due to the use of Yeelight 
 
 ### Whole-house Audio
 
@@ -137,6 +145,12 @@ Sometimes, fixed whole-house audio doesn't quite meet the requirement, and for t
 
 #### Streaming Video
 
-To provide video throughout the house, I have used 2 Beelink MINI MXIII II Android TV boxes, based on the Amlogic S905X Quad Core chipset, for a total of $126. The devices provide Kodi for video streaming.
+To provide video throughout the house, I have used 2 Beelink MINI MXIII II Android TV boxes, based on the Amlogic S905X Quad Core chipset, for a total of $126. The devices provide a pre-installed Kodi 16 installation for video streaming.
 
-For viewing Netflix, I use PlayOn, a streaming video transcoder
+Kodi can be connected to HomeAssistant, to allow Kodi TV states to be used in automation recipes. An example of an automation based on Kodi states would be to automatically dim lights and change the volume of whole-house audio speakers during TV streaming.
+
+For viewing Netflix, I use PlayOn, a streaming video transcoder. Netflix is notoriously difficult as it requires certain Operating Systems 
+
+### Remote Management
+
+All of these tools and features are useful, but when you are away from home, it is not possible to 
