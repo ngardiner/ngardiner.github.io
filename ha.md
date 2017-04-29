@@ -64,7 +64,14 @@ Using the OpenWRT configuration tool linked in my GitHub repo, we are generating
 
 For virtualization of systems and services at home, I have deployed the [Proxmox VE](https://www.proxmox.com) environment. Proxmox VE provides KVM-based virtualization and LXC-based Linux Containers
 
-For a NUC machine, we have 3 types of storage - a 2.5 inch slot yupically, as well as flash storage for ISO images, backups and template files. 
+For a NUC machine, we have 3 types of storage - a 2.5 inch slot typically, as well as flash storage for ISO images, backups and template files. 
+
+#### System Backups
+
+When using Linux Containers to provide all of the functionality required for systems such as HASS and Zoneminder, it is not necessary to back up
+
+- Ansible Configuration Management Server
+- MariaDB Database
 
 ### Distributed Storage
 
@@ -82,7 +89,7 @@ HomeAssistant integrates with Zoneminder by providing an API interface to the Zo
 
 #### Lighting
 
-For indoor LED lighting, I am using Xiaomi Yeelight RGB bulbs. Yeelights use WiFi for communication, which has a slightly higher level of complexity and power utilization than a hub based solution such as the Philips Hue system, but provides a high level of independence to avoid situations where lighting is impacted by a single hub failure (leveraging the inherent WiFi redundancy that was established in the earlier design) and requires less investment in centralised hub infrastructure.
+For indoor LED lighting, I am using Xiaomi Yeelight RGB bulbs. Yeelights have been supported by HomeAssistant since version 0.38, and use WiFi for communication, which has a slightly higher level of complexity and power utilization than a hub based solution such as the Philips Hue system, but provides a high level of independence to avoid situations where lighting is impacted by a single hub failure (leveraging the inherent WiFi redundancy that was established in the earlier design) and requires less investment in centralised hub infrastructure.
 
 Throughout the house, we are using 22 Yeelights. Each Yeelight draws 9w of power, and has an 11 year lifespan. These bulbs are controlled by HomeAssistant, and grouped together into location-based groups. In HomeAssistant, we can assign time and motion based automations to turn on or off the lights as necessary.
 
@@ -95,6 +102,8 @@ When developing light automations, the most important factor is to integrate inf
 - Once movement in a room ceases for X, the lights should be turned off.
 - Buttons should be used primarily to change lighting scenes manually, but should not be needed for turning on/off lighting, except when it is preferable to have lights off whilst someone is in a room
   - These times can be automatically detected by rules: When it is bedtime, when 
+
+<i>Note:</i> Xiaomi Yeelight globes are intended for 220v 50Hz power supplies. I do not recommend using these in a country with lower voltages, as this can cause issues with the WiFi and bulb controller, and is very likely to result in unstable behaviour.
 
 #### Temperature and Humidity Sensors
 
