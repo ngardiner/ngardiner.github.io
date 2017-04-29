@@ -6,7 +6,11 @@ Home Automation is an exciting new area of technology for anyone with an interes
 
 For anyone with scripting and automation background, Home Automation provides a way to outsource things we would typically manage manually to smart processes which are able to read and react to many dynamic values from dynamic sensors around our home.
 
-For around $x, we have managed to turn our house into a Smart House, providing time saving and lifestyle improving routines to make our lives easier, increasing our security and safety, and
+For around $2,000 Australian Dollars ($1,500 USD), we have managed to turn our house into a Smart House, providing time saving and lifestyle improving routines to make our lives easier, increasing our security and safety, and saving money through the reduction of electricity 
+
+### Purpose
+
+The purpose of this document is to capture and record the design, testing and integration of all of these home automation tools and platforms, document things which worked and things which didn't. Nothing that is endorsed or suggested here is authoritative - most of the information here is gathered using trial and error. Certain retailers or sources which I preferred to use during the construction of my Home Automation platform were based on my own preferences, location and experiences. Your mileage may vary.
 
 ## System Architecture
 
@@ -74,13 +78,23 @@ Cameras are important for surveillance and motion detection. Using indoor and ou
 
 Our camera security set-up consists of 6 outdoor cameras (at a cost of $313) and 4 indoor cameras (at a cost of $185). All of the cameras are ESCAM cameras, chosen due to their compatibility with ONVIF and POE. This means that all of the cameras can be powered by UPS protected POE switches, and monitored via standardised ONVIF-compatible tools.
 
-HomeAssistant integrates with Zoneminder by providing a 
+HomeAssistant integrates with Zoneminder by providing an API interface to the ZoneMinder server, automatically discovering all of the connected cameras, showing a thumbnail view of the current camera image and tracking the number of events captured by the cameras, allowing these events to be used within automation routines.
 
 #### Lighting
 
 For indoor LED lighting, I am using Xiaomi Yeelight RGB bulbs. Yeelights use WiFi for communication, which has a slightly higher level of complexity and power utilization than a hub based solution such as the Philips Hue system, but provides a high level of independence to avoid situations where lighting is impacted by a single hub failure (leveraging the inherent WiFi redundancy that was established in the earlier design) and requires less investment in centralised hub infrastructure.
 
-Throughout the house, we are using 17 Yeelights. These are controlled by HomeAssistant, and grouped together into location-based groups. In HomeAssistant, we can assign time and motion based automations to turn on or off the lights as necessary.
+Throughout the house, we are using 22 Yeelights. Each Yeelight draws 9w of power, and has an 11 year lifespan. These bulbs are controlled by HomeAssistant, and grouped together into location-based groups. In HomeAssistant, we can assign time and motion based automations to turn on or off the lights as necessary.
+
+- https://community.home-assistant.io/t/yeelight-led-bulbs-rgb-and-white-bulbs/14620/7
+
+When developing light automations, the most important factor is to integrate information on whether it is appropriate to trigger lighting at any given time, making the use of light switches obsolete. To do that, we have to first sit down and put together some light automation design rules:
+
+- Lights should only be triggered when it is dark outside.
+- Lights should only be triggered when there is movement in a room.
+- Once movement in a room ceases for X, the lights should be turned off.
+- Buttons should be used primarily to change lighting scenes manually, but should not be needed for turning on/off lighting, except when it is preferable to have lights off whilst someone is in a room
+  - These times can be automatically detected by rules: When it is bedtime, when 
 
 #### Temperature and Humidity Sensors
 
@@ -95,7 +109,7 @@ The remaining two Temperature and Humidity sensors are wall-mounted indoors, at 
 
 #### Humam Body Sensor
 
-The Xiaomi Human Body Sensor provides a PIR sensor
+The Xiaomi Human Body Sensor provides a tiny PIR sensor for detecting presence. It can be used both as an automation trigger for when a human enters a room, and also for a security control to trigger an alarm when a secure area is accessed.
 
 #### Door and Window Sensor
 
