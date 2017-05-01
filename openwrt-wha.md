@@ -76,6 +76,8 @@ The first devices that I ordered for testing of the whole house audio setup were
 
 <img src="images/IMG_20170425_083720.jpg" />
 
+These are USB soundcards with 2 x Stereo Output, 2 x Mono MIC input, USB2 bus support and entirely USB bus powered. Despite having 2 x Stereo output channels and 2 x Mono input channels, these inputs and outputs cannot be addressed separately and do not appear as different interfaces.
+
 I can say that my experience with these devices was rather poor. From reading online, I noted that Generalplus develop a number of USB devices which are of a very similar nature and quality. The other two commonly seen Generalplus USB audio devices are these:
 
 <img src="images/71ch.jpg" /> <img src="images/generaltech.jpg" />
