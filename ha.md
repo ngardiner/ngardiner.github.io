@@ -12,6 +12,12 @@ For around $2,000 Australian Dollars ($1,500 USD), we have managed to turn our h
 
 The purpose of this document is to capture and record the design, testing and integration of all of these home automation tools and platforms, document things which worked and things which didn't. Nothing that is endorsed or suggested here is authoritative - most of the information here is gathered using trial and error. Certain retailers or sources which I preferred to use during the construction of my Home Automation platform were based on my own preferences, location and experiences. Your mileage may vary.
 
+### Provider Reliability
+
+Just a word on provider reliability: There are many companies out there who ship equipment out for Home Automation projects. I've encountered the good and the bad of many and am keeping a <a href="prov_reliability.html">runsheet</a> of my own experiences. Whilst I'm not here to recommend any provider in particular, in one case I had an extremely bad experience with one provider who I bought a test order of less than $100 from, before I planned to make a $1500+ order of proxmox nodes from. 
+
+By tracking DOA rates on orders, issues with refunds and effective loss amounts with these providers, I can warn others of potential dodgy operators.
+
 ## System Architecture
 
 The System Architecture for my Home Automation system comes down to a mix of networking, compute and storage resources used with excellent modern Home Automation (or IoT) devices. 
