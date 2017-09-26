@@ -163,6 +163,14 @@ THe following image shows the configuration of the 6 NEXX devices, 4 of which ar
 
 In this image, the two sets of whole-house audio POE strings are connected to power sources and networked together.
 
+#### Home Personal Assistant
+
+One key advantage of this approach is the ability to then integrate in a home personal assistant to allow voice control of components within the house. To do this, I have deployed 3 home personal assistants - Google Assistant, Amazon Alexa and MyCroft AI.
+
+<center>
+  <img src="images/GA-Audio.jpg" />
+</center>
+
 #### Portable Speakers
 
 Sometimes, fixed whole-house audio doesn't quite meet the requirement, and for this I purchased 3 IdeaUSA W205 portable WiFi speakers, which cost $230 in total. The speakers connect via WiFi to our wireless network, and are able to stream audio on multiple protocols including Airplay.
