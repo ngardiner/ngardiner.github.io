@@ -34,6 +34,14 @@ There are multiple ways to engage pulse. On OpenWRT, it will start pulse using a
 
 - Configuration for the Central Broadcast server should be performed using the default.pa file. Avoid removing lines not mentioned in the configuration section of this walkthrough, as we want to maintain as much functionality as possible on this system.
 
+### OpenWRT Image Customization
+
+Whilst it is possible to support this configuration out of the box using OpenWRT, there is a caveat. All current images with PulseAudio 5 or PulseAudio 6 seem to suffer from an issue where 48K RTP streams are not supported (see <a href="https://bugs.freedesktop.org/show_bug.cgi?id=92568">here</a>). 
+
+Technically, 48K RTP streams are not required for this solution, however as a personal design choice I have chosen to stream some inputs such as the TV inputs around the house over Multicast RTP. If I used a tunnel sink for this, it would work, but if I wanted that audio to appear in several places around the house it would require several tunnels and therefore more bandwidth.
+
+The fix for this is to patch the PulseAudio sources. If you do end up pursuing this, you might benefit from my work, as I have not only patched the sources in my repository (TBA), I have also created a device profile which strips out the unnecessary elements such as luci and wireless components and replaced this with a webserver, python and an SFTP server, so that each device can be directly managed by ansible and controlled by HomeAssistant via HTTP/REST sensors and commands.
+
 ## Receivers
 
 ### Packages
