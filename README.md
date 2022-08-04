@@ -1,5 +1,10 @@
 **Welcome!** This page contains links to my projects, some information on my [background](history.html) and interests.
 
+## Infrastructure
+
+The following 
+   * Non-ephemeral services (Databases, Routing etc) are hosted on Proxmox, via LXC containers.
+
 ## Projects
 
    * [DAB Templates](https://github.com/ngardiner/dab_templates) for simple, customized deployment of Linux Container Templates (LXC) on Proxmox VE.
@@ -10,8 +15,3 @@
 
    * [My Facebook Page](https://www.facebook.com/ngardiner.au)
    * [My YouTube Channel](https://www.youtube.com/channel/UCkebA82Wo43QoMuSYSDDm3g)
-
-`Code` text and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
