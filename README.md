@@ -9,6 +9,7 @@ The following
 
    * [DAB Templates](https://github.com/ngardiner/dab_templates) for simple, customized deployment of Linux Container Templates (LXC) on Proxmox VE.
    * [Home Automation](https://ngardiner.github.io/ha.html) - Read about my extensive Home Automation setup, including the network infrastructure and virtualization used.
+   * [My Lightweight IoT Firewall](iot-firewall.md) for a containerised DNS-aware Firewall for IoT networks.
    * [OpenWRT Configuration System](https://github.com/ngardiner/openwrt_config) for configuring large deployments of OpenWRT systems - [read more](openwrt_deployments) on how and why such a large deployment is required. (_Note: very alpha codebase_)
 
 ## Social Media
