@@ -32,12 +32,19 @@ To deploy your own [iot-firewall](https://github.com/ngardiner/iot-firewall) sys
    * Install the following packages, depending on which of these distributions you are using:
       * Debian / Ubuntu
 
-``` apt install -y corosync pacemaker pcs ulogd2 ```
+``` apt install -y corosync git pacemaker pcs python3-jinja2 ulogd2 ```
 
       * RedHat / CentOS
+      
+``` yum ```
+
    * Pull the iot-firewall repository
 
-``` git pull https://github.com/ngardiner/iot-firewall ```
+``` git clone https://github.com/ngardiner/iot-firewall ```
+
+   * Run setup script
+
+``` iot-firewall/setup.sh ```
 
 ## Todo
 
